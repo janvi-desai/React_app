@@ -1,0 +1,63 @@
+Life Cycle methods
+
+born-live-updated-died          |
+born-live-updated-died          |   <= Life-cycle
+born-live-updated-died          |
+
+Mount <= Birth of component ... it's just example.
+
+*) What is mount ???
+=> When component is initially render in a DOM/Screen.
+
+*) What is update ???
+=> Component is being updated.
+
+*) What is unmount ???
+=> Component is removed from DOM.
+
+*) What is state ???
+=> A set of data that an individual component holds.
+
+*) What is props ???
+=> properties/parameters ... A data that is being passed from one component to another.
+
+
+*Mounting*    ===   Creating
+
+Constructor     ===     function -> initially
+
+render  === it's take care of our logic.
+
+ComponentDidMount...    -> it is a method thet will be execute at initial render
+  -> with this method help 
+        get explore repos 
+        get activities
+        get link 
+        &... much more
+
+when we search something the API calling and update the components. .. it's called ComponentDidMount..
+
+
+*Updating*  
+
+/// .... IT DIDN'T WORK [1.] static getDerivedStateFromProps (props, state)   -> null or new state object
+
+//// => static === Doesn't change
+
+[1.] Constructor
+
+[2.] shouldComponentUpdate(nextProp, nextState)  -> it return true or false..
+
+=> Something is fired..
+
+[3.] render()
+
+[4.] getSnapshotBeforeUpdate(prevProps, prevState)  -> return true or false
+
+[5.] ComponentDidUpdate()
+
+
+
+*unmounting*
+
+[1.] componentWillUnmount()
