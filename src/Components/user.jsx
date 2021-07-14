@@ -1,6 +1,60 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-class User extends React.Component {
+/* if i use.. 
+
+ -->   import React from "react";
+       THEN----> const planet = React.useState("Earth");
+
+*/
+
+
+const User = (props) => {
+    const [planet, setPlanet] = useState("Earth");
+    const [msg, setMsg] = useState("Hyyy...");
+
+   // console.log(planet);
+    // console.log(msg);
+    // setPlanet("Jupiter");   <- B'coz of this command it's make rerender.. and go to in infinite loop, Give so many error.
+    // provide two thing.. 
+    // 1) the value and 2) the function to update the state
+
+    ///// componentDidMount()
+    useEffect(() => 
+    {
+       // setPlanet("Marse");
+       // setMsg("Hellow..");
+
+       ///// Heavy computation
+        console.log("Component mounting");
+
+        ///// componentWillUnmount()
+        return console.log("by.. by");
+    }, []);
+
+    // if(planet) {
+    //     console.log("Planet changed");
+    // }   <- it check planet's value is changed or not.
+
+    // it write in second way...
+
+    ///// componentDidUpdate() 
+    ////// shouldComponentUpdate
+    useEffect(() => {
+        console.log("Planet changes");
+    }, [planet]);
+
+    return (
+        <div>
+            <h1> { props.name} </h1>
+            <p> { props.description} </p>
+            {/* <h5> { planet}</h5> */}
+            <button onClick={() => setPlanet("Pluto")}>{planet}</button>
+            <h4> {msg}</h4>
+        </div>
+    );
+};
+
+/* class User extends React.Component {
     constructor(props){
         super(props);
 
@@ -63,7 +117,7 @@ class User extends React.Component {
             </div>
         );
     }
-}
+}*/
 
 
 export default User;
@@ -71,3 +125,11 @@ export default User;
 
 
 // state => A set of data that an individual component holds.
+
+// React 16 .. release "Hooks"
+
+// Hooks -> power to you functional components
+// all the "Hooks" the start name of the 'use'
+// purpose is with 'useState()'
+// "useJanvihook()" is valide.. start with 'use'
+
